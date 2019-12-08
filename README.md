@@ -78,16 +78,3 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
-
-
-## users_commentsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|user|references|null: false, foreign_key: true|
-|comment|references|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
