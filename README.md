@@ -27,28 +27,26 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|nickname|string|null: false, foreign_key: true|
-|email|string|null: false, foreign_key: true|
-|password|string|null: false, foreign_key: true|
+|id|integer|null: false|
+|nickname|string|null: false, index: true|
+|email|string|null: false|
+|password|string|null: false|
 
 ### Association
 - has_many :groups,through: :users_groups
 - has_many :users_groups
-- has_many :comments,through: :users_comments
-- has_many :users_comments
+- has_many :comments
 
 
 ## groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|group_name|string|null: false, foreign_key: true|
+|id|integer|null: false|
+|name|string|null: false|
 
 ### Association
-- has_many :comments,through: :groups_comments
-- has_many :groups_comments
+- has_many :comments
 - has_many :users,through: :users_groups
 - has_many :users_groups
 
@@ -57,49 +55,39 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
+|id|integer|null: false|
 |text|text||
 |image|string||
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
 
 
 ## users_groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|users_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
+|id|integer|null: false|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
-
-
-## groups_commentsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|comments_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :groups
-- belongs_to :comments
+- belongs_to :group
+- belongs_to :user
 
 
 ## users_commentsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|users_id|integer|null: false, foreign_key: true|
-|comments_id|integer|null: false, foreign_key: true|
+|id|integer|null: false|
+|user|references|null: false, foreign_key: true|
+|comment|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :groups
-- belongs_to :users
+- belongs_to :group
+- belongs_to :user
