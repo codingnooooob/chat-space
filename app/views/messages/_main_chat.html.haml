@@ -1,0 +1,40 @@
+.chat_main
+  .chat_main__group_info
+    .chat_main__group_info__header_left
+      夢がMORI MORI
+      .chat_main__group_info__header_left__name
+        Member:森脇健児&森口博子
+    .chat_main__group_info__header_right
+      .chat_main__group_info__header_right__btn
+        = link_to "#", class: "btn", style: "color:aqua" do
+          Edit
+  .chat_main__message_list
+    .chat_main__message_list__name_1
+      .chat_main__message_list__name_1__name
+        森脇健児&森口博子
+      .chat_main__message_list__name_1__date
+        1500/12/11(Wed) 20:06:01
+    .chat_main__message_list__message_1
+      光る風の中 ほほえんでる あなたがいる
+    .chat_main__message_list__name_2
+      .chat_main__message_list__name_2__name
+        森脇健児&森口博子
+      .chat_main__message_list__name_2__date
+        2019/12/11(Wed) 20:06:01
+    .chat_main__message_list__message_2
+      SMAPはワシが育てた
+  .chat_main__message_form
+    .chat_main__message_form__group
+      .chat_main__message_form__group__form
+        %form{action: "#", method: "post"}
+        %input{type: "text", placeholder: "type a message", style: "height:50px;border:solid 0px;width:100%;"}
+
+      .chat_main__message_form__group__icon
+        .chat_main__message_form__group__icon__image
+          %label
+            %input{type: "file", class: "file_select"}
+              = icon('fas', 'image')
+
+      .chat_main__message_form__group__btn
+        = link_to "#", class: "btn_2", style: "color:#ffffff" do
+          Send
