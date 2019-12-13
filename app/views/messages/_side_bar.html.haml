@@ -2,11 +2,11 @@
   .side_bar__user_name
     .side_bar__user_name__top_items
       .side_bar__user_name__top_items__name
-        森脇健児&森口博子
+        = current_user.name
       .side_bar__user_name__top_items__icons
         = link_to "#", class: "contents__btn", style: "color:#ffffff" do
           = icon('fa', 'edit', class: "btn_left")      
-        = link_to "#", class: "contents__btn", style: "color:#ffffff" do
+        = link_to edit_user_path(current_user), class: "contents__btn", style: "color:#ffffff" do
           = icon('fas', 'cog', class: "btn_right")
   .side_bar__group_list
     .side_bar__group_list__groups
