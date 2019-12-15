@@ -4,14 +4,16 @@
       .side_bar__user_name__top_items__name
         = current_user.name
       .side_bar__user_name__top_items__icons
-        = link_to "#", class: "contents__btn", style: "color:#ffffff" do
+        = link_to new_group_path(current_user), class: "contents__btn", style: "color:#ffffff" do
           = icon('fa', 'edit', class: "btn_left")      
         = link_to edit_user_path(current_user), class: "contents__btn", style: "color:#ffffff" do
           = icon('fas', 'cog', class: "btn_right")
   .side_bar__group_list
     .side_bar__group_list__groups
-      .side_bar__group_list__groups__group
-        .side_bar__group_list__groups__group__name
-          夢がMORI MORI
-        .side_bar__group_list__groups__group__message
-          SMAPはワシが育てた
+      - current_user.groups.each do |group|
+        .side_bar__group_list__groups__group
+          = link_to group_messages_path(group) do
+            .side_bar__group_list__groups__group__name
+              = group.name
+            .side_bar__group_list__groups__group__message
+              メッセージはまだありません。
