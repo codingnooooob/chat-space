@@ -23,18 +23,15 @@
         2019/12/11(Wed) 20:06:01
     .chat_main__message_list__message_2
       SMAPはワシが育てた
+
   .chat_main__message_form
-    .chat_main__message_form__group
-      .chat_main__message_form__group__form
-        %form{action: "#", method: "post"}
-        %input{type: "text", placeholder: "type a message", style: "height:50px;border:solid 0px;width:100%;"}
-
-      .chat_main__message_form__group__icon
-        .chat_main__message_form__group__icon__image
-          %label
-            %input{type: "file", class: "file_select"}
-              = icon('fas', 'image')
-
-      .chat_main__message_form__group__btn
-        = link_to "#", class: "btn_2", style: "color:#ffffff" do
-          Send
+    .chat_main__message_form__new_message
+      = form_for [@group, @message] do |f|
+        .chat_main__message_form__new_message__form
+          = f.text_field :text, class: 'chat_main__message_form__new_message__form__input', placeholder: 'type a message'
+        .chat_main__message_form__new_message__icon
+          .chat_main__message_form__new_message__icon__image
+            = f.label :image do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'file_select'
+        = f.submit 'Send', class: 'btn_2'
