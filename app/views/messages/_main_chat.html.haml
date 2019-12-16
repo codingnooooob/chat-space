@@ -1,7 +1,7 @@
 .chat_main
   .chat_main__group_info
     .chat_main__group_info__header_left
-      夢がMORI MORI
+      = @group.name
       .chat_main__group_info__header_left__name
         Member:森脇健児&森口博子
     .chat_main__group_info__header_right
@@ -9,20 +9,7 @@
         = link_to "#", class: "btn", style: "color:aqua" do
           Edit
   .chat_main__message_list
-    .chat_main__message_list__name_1
-      .chat_main__message_list__name_1__name
-        森脇健児&森口博子
-      .chat_main__message_list__name_1__date
-        1500/12/11(Wed) 20:06:01
-    .chat_main__message_list__message_1
-      光る風の中 ほほえんでる あなたがいる
-    .chat_main__message_list__name_2
-      .chat_main__message_list__name_2__name
-        森脇健児&森口博子
-      .chat_main__message_list__name_2__date
-        2019/12/11(Wed) 20:06:01
-    .chat_main__message_list__message_2
-      SMAPはワシが育てた
+    = render @messages
 
   .chat_main__message_form
     .chat_main__message_form__new_message

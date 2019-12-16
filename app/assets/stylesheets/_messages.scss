@@ -3,3 +3,29 @@
 
 }
 
+.message {
+  
+  .upper-message {
+    display: flex;
+    
+    .upper-message__user-name {
+      color: #333333;
+      font-size: 16px;
+    }
+
+    .upper-message__date {
+      color: #999999;
+      font-size: 12px;
+      padding-left: 5px;
+    }
+  }
+
+  .lower-message {
+
+    .lower-message__content {
+      color: #434A54;
+      font-size: 14px;
+      padding-bottom: 46px;
+    }
+  }
+}
