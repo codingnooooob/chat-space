@@ -3,10 +3,11 @@
     .chat_main__group_info__header_left
       = @group.name
       .chat_main__group_info__header_left__name
-        Member:森脇健児&森口博子
+        - @group.users.each do |user|
+          = user.name
     .chat_main__group_info__header_right
       .chat_main__group_info__header_right__btn
-        = link_to "#", class: "btn", style: "color:aqua" do
+        = link_to , class: "btn", style: "color:aqua" do
           Edit
   .chat_main__message_list
     = render @messages
