@@ -7,7 +7,7 @@
           = user.name
     .chat_main__group_info__header_right
       .chat_main__group_info__header_right__btn
-        = link_to , class: "btn", style: "color:aqua" do
+        = link_to edit_group_path(@group), class: "btn", style: "color:aqua" do
           Edit
   .chat_main__message_list
     = render @messages
