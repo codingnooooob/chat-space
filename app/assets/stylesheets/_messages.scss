@@ -8,12 +8,12 @@
   .upper-message {
     display: flex;
     
-    .upper-message__user-name {
+    &__user-name {
       color: #333333;
       font-size: 16px;
     }
 
-    .upper-message__date {
+    &__date {
       color: #999999;
       font-size: 12px;
       padding-left: 5px;
@@ -22,10 +22,15 @@
 
   .lower-message {
 
-    .lower-message__content {
+    &__content {
       color: #434A54;
       font-size: 14px;
       padding-bottom: 46px;
+    }
+
+    &__image {
+      height: 400px;
+      width: 400px;
     }
   }
 }

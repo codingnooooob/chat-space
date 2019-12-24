@@ -46,7 +46,11 @@ $(function(){
           <div class="upper-message__date">
             ${message.created_at}
           </div>
-          <img src=${message.image} width="400px" height="400px">
+        </div>
+        <div class="lower-message">
+          <p class="lower-message__content">
+          </p>
+            <img src=${message.image} width="400px" height="400px">
         </div>
       </div>`
     }
