@@ -16,7 +16,7 @@ $(function(){
             <p class="lower-message__content">
               ${message.text}
             </p>
-              <img src=${message.image} >
+              <img src=${message.image} width="400px" height="400px">
           </div>
         </div>`
     } else if(message.text){
@@ -46,7 +46,7 @@ $(function(){
           <div class="upper-message__date">
             ${message.created_at}
           </div>
-          <img src=${message.image} >
+          <img src=${message.image} width="400px" height="400px">
         </div>
       </div>`
     }
